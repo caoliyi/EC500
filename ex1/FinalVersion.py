@@ -3,8 +3,16 @@ import tweepy
 import wget
 import urllib 
 import os
-
 import requests
+import io
+
+
+
+# Imports the Google Cloud client library
+from google.cloud import vision
+
+from google.cloud.vision import types
+from os import listdir
 
 
 #Twitter API credentials
@@ -12,6 +20,7 @@ consumer_key = "uSaUtFQs3UNEQBIBPu1lhiSBO"
 consumer_secret = "JKOgEDwrsAlCM71Lf2UTaR8ID4c12AMmSPJtj9EwTxPySwZrdP"
 access_key = "920759201663803393-Ionn5JJjejdcAYBaeM9kfy7QVOQaIp4"
 access_secret = "uIz5FrBovzM1NJa7zl2qNXUyUUXFH6LHDzSK7kpr9GPgg"
+
 
 def get_all_tweets(screen_name):
     
@@ -55,18 +64,51 @@ def get_all_tweets(screen_name):
         # print (media[0])
         if(len(media) > 0):
             for i in range(len(media)):
-             media_files.add(media[i]['media_url'],)
+             media_files.add(media[i]['media_url'])
 
     for media_file in media_files:
 
         print(media_file)
+        wget.download(media_file,"./picture")
+  
+    os.system("cd ./picture && ffmpeg -framerate 1 -pattern_type glob -i '*.jpg'     -c:v libx264 -r 30 -pix_fmt yuv420p out.mp4")
 
-        wget.download(media_file)
 
-    os.system("ffmpeg -framerate 1 -pattern_type glob -i '*.jpg'     -c:v libx264 -r 30 -pix_fmt yuv420p out.mp4")
+   # for google vision
+    client = vision.ImageAnnotatorClient()
+    file = open("./picture/label.txt","w")
 
+    
+    
+    OBJ = [pic for pic in listdir("./picture") if pic.endswith('jpg')]
+    print(OBJ)
+    for i in OBJ:
+        file_name = os.path.join(os.path.dirname(__file__),"picture",i)
+  
+    
 
+# Loads the image into memory
+        with io.open(file_name, 'rb') as image_file:
+             content = image_file.read()
+       
+        image = types.Image(content=content)
+
+        # Performs label detection on the image file
+        response = client.label_detection(image=image)
+        labels = response.label_annotations
+       
+        file.write('Lables for  '+i+'  :\n')
+        print('Labels:')
         
+        
+        for label in labels:
+           
+           file.write(label.description+'\n')
+           print(label.description)
+        
+    file.close()
+   
+            
 if __name__ == '__main__':
     #pass in the username of the account you want to download
     get_all_tweets("@LiyiCao")
