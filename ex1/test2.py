@@ -15,11 +15,6 @@ from google.cloud.vision import types
 from os import listdir
 
 
-#Twitter API credentials
-consumer_key = "uSaUtFQs3UNEQBIBPu1lhiSBO"
-consumer_secret = "JKOgEDwrsAlCM71Lf2UTaR8ID4c12AMmSPJtj9EwTxPySwZrdP"
-access_key = "920759201663803393-Ionn5JJjejdcAYBaeM9kfy7QVOQaIp4"
-access_secret = "uIz5FrBovzM1NJa7zl2qNXUyUUXFH6LHDzSK7kpr9GPgg"
 
 
 def get_all_tweets(screen_name):
