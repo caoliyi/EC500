@@ -8,6 +8,9 @@ Data will be stored in the same directory with the API python file.
 API Calls:
 API calls with one function that generates pics, videos and a text file which contains Google Vision API labels.
 
+## Code Convention and Readability
+I think her codes are very clear and well commented. I can read and understand very easily. However, I think it would be better if she reminds the tester to put on their own Twitter's credential keys.
+
 ## Error Handling: 
 1. Users without any pictures uploaded.
 Nothing happened, the program terminates itself. There was no video generated, giving an error: [image2 @ 0x7fbb09803400] Could not open file : *.png
