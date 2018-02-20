@@ -19,7 +19,7 @@ Got error: tweepy.error.TweepError: [{'code': 34, 'message': 'Sorry, that page d
 2. The labels.txt also gives correct anwsers from Google Cloud Vision.
 
 ## main call:
-I think the main call is synchronous. Step 1: get pics; Step 2: generates a video; step 3: uses Google API to give labels.
+  I think the main call is synchronous. Step 1: get pics; Step 2: generates a video; step 3: uses Google API to give labels.
 
 ## Test Web:
 ![alt text](https://github.com/caoliyi/EC500/blob/master/test.png)
