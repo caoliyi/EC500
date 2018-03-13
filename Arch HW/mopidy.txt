@@ -1,0 +1,42 @@
+›2017-02-09 14:04:32,814 INFO [1740:MainThread] mopidy.__main__: Starting Mopidy 2.1.0
+2017-02-09 14:04:33,243 INFO [1740:MainThread] mopidy.config: Loading config from builtin defaults
+2017-02-09 14:04:33,264 INFO [1740:MainThread] mopidy.config: Loading config from /etc/mopidy/mopidy.conf
+2017-02-09 14:04:33,275 INFO [1740:MainThread] mopidy.config: Loading config from command line options
+2017-02-09 14:04:33,808 INFO [1740:MainThread] mopidy.__main__: Enabled extensions: mpd, http, local-sqlite, scrobbler, softwaremixer, musicbox_webclient, local
+2017-02-09 14:04:33,810 INFO [1740:MainThread] mopidy.__main__: Disabled extensions: m3u, file, stream
+2017-02-09 14:04:34,201 INFO [1740:MainThread] mopidy.commands: Starting Mopidy mixer: SoftwareMixer
+2017-02-09 14:04:34,212 INFO [1740:MainThread] mopidy.commands: Starting Mopidy audio
+2017-02-09 14:04:34,224 INFO [1740:MainThread] mopidy.commands: Starting Mopidy backends: LocalBackend
+2017-02-09 14:04:34,248 INFO [1740:MainThread] mopidy.local.library: Loaded 11496 local tracks using sqlite
+2017-02-09 14:04:34,270 INFO [1740:MainThread] mopidy.commands: Starting Mopidy core
+2017-02-09 14:04:34,325 INFO [1740:Audio-2] mopidy.audio.actor: Audio output set to "autoaudiosink"
+2017-02-09 14:04:34,356 INFO [1740:MainThread] mopidy.commands: Starting Mopidy frontends: MpdFrontend, HttpFrontend, ScrobblerFrontend
+2017-02-09 14:04:34,375 INFO [1740:MainThread] mopidy.mpd.actor: MPD server running at [::]:6600
+2017-02-09 14:04:34,388 INFO [1740:HttpFrontend-7] mopidy.http.actor: HTTP server running at [::]:6680
+2017-02-09 14:04:34,397 INFO [1740:MainThread] mopidy.commands: Starting GLib mainloop
+2017-02-09 14:04:35,906 INFO [1740:ScrobblerFrontend-8] mopidy_scrobbler.frontend: Scrobbler connected to Last.fm
+2017-02-09 14:05:22,885 INFO [1769:MainThread] mopidy.__main__: Starting Mopidy 2.1.0
+2017-02-09 14:05:23,328 INFO [1769:MainThread] mopidy.config: Loading config from builtin defaults
+2017-02-09 14:05:23,349 INFO [1769:MainThread] mopidy.config: Loading config from /etc/mopidy/mopidy.conf
+2017-02-09 14:05:23,360 INFO [1769:MainThread] mopidy.config: Loading config from command line options
+2017-02-09 14:05:23,901 INFO [1769:MainThread] mopidy.__main__: Enabled extensions: mpd, http, local-sqlite, scrobbler, softwaremixer, musicbox_webclient, local
+2017-02-09 14:05:23,903 INFO [1769:MainThread] mopidy.__main__: Disabled extensions: m3u, file, stream
+2017-02-09 14:05:41,728 INFO [1769:MainThread] mopidy.local.commands: Found 12651 files in media_dir.
+2017-02-09 14:05:41,732 WARNING [1769:MainThread] mopidy.local.commands: Encountered 8 errors while scanning media_dir.
+2017-02-09 14:05:41,753 INFO [1769:MainThread] mopidy.local.commands: Checking 11496 tracks from library.
+2017-02-09 14:06:36,280 INFO [1769:MainThread] mopidy.local.commands: Removing 0 missing tracks.
+2017-02-09 14:06:41,543 INFO [1769:MainThread] mopidy.local.commands: Found 4971 tracks which need to be updated.
+2017-02-09 14:06:41,545 INFO [1769:MainThread] mopidy.local.commands: Scanning...
+2017-02-09 14:06:41,664 ERROR [1769:MainThread] mopidy.__main__: 'ascii' codec can't decode byte 0xc3 in position 66: ordinal not in range(128)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/mopidy/__main__.py", line 134, in main
+    return args.command.run(args, proxied_config)
+  File "/usr/lib/python2.7/site-packages/mopidy/local/commands.py", line 142, in run
+    result = scanner.scan(file_uri)
+  File "/usr/lib/python2.7/site-packages/mopidy/audio/scan.py", line 71, in scan
+    tags, mime, have_audio, duration = _process(pipeline, timeout)
+  File "/usr/lib/python2.7/site-packages/mopidy/audio/scan.py", line 232, in _process
+    error = encoding.locale_decode(msg.parse_error()[0])
+  File "/usr/lib/python2.7/site-packages/mopidy/internal/encoding.py", line 12, in locale_decode
+    return bytes(bytestr).decode(locale.getpreferredencoding())
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xc3 in position 66: ordinal not in range(128)
