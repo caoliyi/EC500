@@ -1,0 +1,52 @@
+Lables for  0.jpg  :
+drink
+soft drink
+carbonated soft drinks
+bottle
+tree
+cola
+vacation
+Lables for  1.jpg  :
+sport venue
+player
+games
+crowd
+basketball moves
+competition event
+championship
+audience
+ball game
+performance
+Lables for  2.jpg  :
+green
+nature
+light
+night
+darkness
+lighting
+special effects
+grass
+laser
+midnight
+Lables for  3.jpg  :
+performing arts
+performance
+theatre
+fashion
+performance art
+stage
+drama
+musical theatre
+costume
+event
+Lables for  4.jpg  :
+sport venue
+basketball moves
+basketball player
+games
+basketball court
+arena
+sports
+player
+structure
+audience
